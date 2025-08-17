@@ -1,9 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
-import { Product } from '@/data/products';
+import { useState } from 'react';
 import { useCartStore } from '@/store/cart';
+import { Product } from '@/data/products';
 
 interface AddToCartButtonProps {
   product: Product;
@@ -11,23 +10,24 @@ interface AddToCartButtonProps {
 
 export function AddToCartButton({ product }: AddToCartButtonProps) {
   const { addItem } = useCartStore();
+  const [isAdding, setIsAdding] = useState(false);
 
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleAddToCart = async () => {
+    setIsAdding(true);
     addItem(product);
+
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 500));
+    setIsAdding(false);
   };
 
   return (
-    <motion.button
+    <button
       onClick={handleAddToCart}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ y: 1 }}
-      className="w-full flex items-center justify-center gap-2 bg-accent text-accent-foreground py-3 px-4 rounded-xl font-medium hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 transition-all duration-200"
-      aria-label={`Add ${product.name} to cart`}
+      disabled={isAdding}
+      className="btn-primary w-full h-10"
     >
-      <ShoppingCartIcon className="w-4 h-4" />
-      Add to Cart
-    </motion.button>
+      {isAdding ? 'Adding...' : 'Add to Cart'}
+    </button>
   );
 }

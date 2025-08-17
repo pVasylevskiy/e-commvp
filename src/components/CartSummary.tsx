@@ -1,6 +1,7 @@
 'use client';
 
 import { useCartStore } from '@/store/cart';
+import Link from 'next/link';
 
 export function CartSummary() {
   const { getTotalItems, getTotalPrice } = useCartStore();
@@ -8,10 +9,8 @@ export function CartSummary() {
   const totalPrice = getTotalPrice();
 
   return (
-    <div className="glass-card rounded-2xl p-8">
-      <h3 className="text-2xl font-display font-semibold mb-6">
-        Order Summary
-      </h3>
+    <div className="card-large p-6">
+      <h2 className="mb-6">Order Summary</h2>
 
       <div className="space-y-4 mb-8">
         <div className="flex justify-between py-3 border-b border-border/30">
@@ -29,10 +28,19 @@ export function CartSummary() {
       </div>
 
       <div className="border-t border-border/30 pt-6">
-        <div className="flex justify-between text-xl font-display font-bold">
+        <div className="flex justify-between text-xl font-semibold">
           <span>Total</span>
           <span className="text-accent">${totalPrice.toFixed(2)}</span>
         </div>
+      </div>
+
+      <div className="mt-6">
+        <Link
+          href="/checkout"
+          className="btn-primary w-full text-center text-base py-3"
+        >
+          Proceed to Checkout
+        </Link>
       </div>
     </div>
   );

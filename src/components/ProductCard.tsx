@@ -1,10 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from '@/data/products';
-import { PriceBadge } from './PriceBadge';
 import { AddToCartButton } from './AddToCartButton';
 
 interface ProductCardProps {
@@ -13,69 +11,36 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   return (
-    <motion.div
-      whileHover={{ scale: 1.02 }}
-      className="group relative overflow-hidden rounded-2xl glass-card hover:shadow-glass transition-all duration-300"
-    >
+    <div className="card p-4 group">
       <Link href={`/products/${product.slug}`} className="block">
-        <div className="relative aspect-[4/5] overflow-hidden">
-          <motion.div
-            whileHover={{ y: -3 }}
-            transition={{ duration: 0.3 }}
-            className="h-full w-full"
-          >
-            <Image
-              src={product.image}
-              alt={`${product.brand} ${product.name} perfume bottle`}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </motion.div>
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl mb-4">
+          <Image
+            src={product.image}
+            alt={`${product.brand} ${product.name} perfume bottle`}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        </div>
 
-          {/* Price Badge */}
-          <div className="absolute top-4 right-4">
-            <PriceBadge price={product.price} />
+        <div className="space-y-2">
+          <p className="text-sm text-muted-foreground font-medium">
+            {product.brand}
+          </p>
+          <h3 className="font-semibold text-foreground line-clamp-2 leading-tight">
+            {product.name}
+          </h3>
+          <div className="flex items-center justify-between">
+            <span className="text-lg font-semibold text-accent">
+              ${product.price}
+            </span>
           </div>
-
-          {/* Hover Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
       </Link>
 
-      <div className="p-6">
-        <div className="mb-3">
-          <p className="text-sm font-medium text-muted-foreground mb-1">
-            {product.brand}
-          </p>
-          <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
-            {product.name}
-          </h3>
-        </div>
-
-        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-          {product.description}
-        </p>
-
-        {/* Add to Cart Button - Full Width */}
-        <div className="w-full">
-          <AddToCartButton product={product} />
-        </div>
-
-        {/* View Details Link - Hidden by default, shown on hover */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileHover={{ opacity: 1, y: 0 }}
-          className="mt-3 text-center"
-        >
-          <Link
-            href={`/products/${product.slug}`}
-            className="text-sm text-secondary hover:text-secondary/80 transition-colors font-medium"
-          >
-            View details →
-          </Link>
-        </motion.div>
+      <div className="mt-4">
+        <AddToCartButton product={product} />
       </div>
-    </motion.div>
+    </div>
   );
 }

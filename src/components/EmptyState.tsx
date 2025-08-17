@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import {
   ShoppingBagIcon,
   MagnifyingGlassIcon,
@@ -25,20 +24,13 @@ export function EmptyState({
   const Icon = type === 'cart' ? ShoppingBagIcon : MagnifyingGlassIcon;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="text-center py-20"
-    >
-      <div className="glass-card rounded-2xl p-12 max-w-md mx-auto">
-        <div className="mx-auto w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center mb-8">
+    <div className="text-center py-12">
+      <div className="card-large p-12 max-w-md mx-auto">
+        <div className="mx-auto w-24 h-24 bg-accent/10 rounded-2xl flex items-center justify-center mb-8">
           <Icon className="w-12 h-12 text-accent" />
         </div>
 
-        <h3 className="text-3xl font-display font-bold text-foreground mb-4">
-          {title}
-        </h3>
+        <h2 className="mb-4">{title}</h2>
         <p className="text-muted-foreground mb-8 leading-relaxed">
           {description}
         </p>
@@ -47,6 +39,6 @@ export function EmptyState({
           {actionText}
         </Link>
       </div>
-    </motion.div>
+    </div>
   );
 }

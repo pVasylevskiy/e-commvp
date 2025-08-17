@@ -6,33 +6,35 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
 const inter = Inter({
-  variable: '--font-inter',
   subsets: ['latin'],
+  variable: '--font-inter',
 });
 
 const manrope = Manrope({
-  variable: '--font-manrope',
   subsets: ['latin'],
+  variable: '--font-manrope',
 });
 
 export const metadata: Metadata = {
-  title: 'Moonlight Perfume - Luxury Fragrances',
+  title: 'Moonlight - Luxury Fragrances',
   description:
-    'Discover your signature scent with our curated collection of luxury fragrances',
+    'Discover your signature scent with our curated collection of luxury fragrances.',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${manrope.variable} antialiased`}>
+      <body className={`${inter.variable} ${manrope.variable}`}>
         <ThemeProvider>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

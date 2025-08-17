@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from './ThemeToggle';
@@ -29,28 +28,23 @@ export function Header() {
   ];
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`sticky top-0 z-50 w-full transition-all duration-500 ${
+    <header
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-xl shadow-glass border-b border-border/20'
-          : 'bg-transparent'
+          ? 'bg-card border-b border-border shadow-sm'
+          : 'bg-card border-b border-border'
       }`}
     >
-      <div className="container-width section-padding">
+      <div className="container">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center">
-            <motion.h1
-              className="text-2xl font-display font-bold text-gradient"
-              whileHover={{ scale: 1.05 }}
-            >
+            <h1 className="text-2xl font-semibold text-foreground">
               Moonlight
-            </motion.h1>
+            </h1>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -60,12 +54,7 @@ export function Header() {
               >
                 {item.label}
                 {pathname === item.href && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent rounded-full"
-                    initial={false}
-                    transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                  />
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent rounded-full" />
                 )}
               </Link>
             ))}
@@ -74,23 +63,16 @@ export function Header() {
           <div className="flex items-center gap-4">
             <Link href="/cart" className="relative">
               <CartIcon />
-              <AnimatePresence>
-                {getTotalItems() > 0 && (
-                  <motion.span
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    exit={{ scale: 0 }}
-                    className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium"
-                  >
-                    {getTotalItems()}
-                  </motion.span>
-                )}
-              </AnimatePresence>
+              {getTotalItems() > 0 && (
+                <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium">
+                  {getTotalItems()}
+                </span>
+              )}
             </Link>
             <ThemeToggle />
           </div>
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 }

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { z } from 'zod';
 import { useCartStore } from '@/store/cart';
@@ -61,16 +60,10 @@ export function CheckoutForm() {
   };
 
   return (
-    <motion.form
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      onSubmit={handleSubmit}
-      className="space-y-8"
-    >
+    <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium mb-3">
+          <label htmlFor="name" className="block text-sm font-medium mb-2">
             Full Name *
           </label>
           <input
@@ -78,7 +71,7 @@ export function CheckoutForm() {
             id="name"
             name="name"
             required
-            className={`input-field ${
+            className={`input ${
               errors.name ? 'border-red-500 ring-red-500' : ''
             }`}
             placeholder="John Doe"
@@ -89,7 +82,7 @@ export function CheckoutForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium mb-3">
+          <label htmlFor="email" className="block text-sm font-medium mb-2">
             Email *
           </label>
           <input
@@ -97,7 +90,7 @@ export function CheckoutForm() {
             id="email"
             name="email"
             required
-            className={`input-field ${
+            className={`input ${
               errors.email ? 'border-red-500 ring-red-500' : ''
             }`}
             placeholder="john@example.com"
@@ -108,7 +101,7 @@ export function CheckoutForm() {
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium mb-3">
+          <label htmlFor="phone" className="block text-sm font-medium mb-2">
             Phone *
           </label>
           <input
@@ -116,7 +109,7 @@ export function CheckoutForm() {
             id="phone"
             name="phone"
             required
-            className={`input-field ${
+            className={`input ${
               errors.phone ? 'border-red-500 ring-red-500' : ''
             }`}
             placeholder="+1 (555) 123-4567"
@@ -127,7 +120,7 @@ export function CheckoutForm() {
         </div>
 
         <div>
-          <label htmlFor="address" className="block text-sm font-medium mb-3">
+          <label htmlFor="address" className="block text-sm font-medium mb-2">
             Address *
           </label>
           <input
@@ -135,7 +128,7 @@ export function CheckoutForm() {
             id="address"
             name="address"
             required
-            className={`input-field ${
+            className={`input ${
               errors.address ? 'border-red-500 ring-red-500' : ''
             }`}
             placeholder="123 Main St"
@@ -146,7 +139,7 @@ export function CheckoutForm() {
         </div>
 
         <div>
-          <label htmlFor="city" className="block text-sm font-medium mb-3">
+          <label htmlFor="city" className="block text-sm font-medium mb-2">
             City *
           </label>
           <input
@@ -154,7 +147,7 @@ export function CheckoutForm() {
             id="city"
             name="city"
             required
-            className={`input-field ${
+            className={`input ${
               errors.city ? 'border-red-500 ring-red-500' : ''
             }`}
             placeholder="New York"
@@ -165,7 +158,7 @@ export function CheckoutForm() {
         </div>
 
         <div>
-          <label htmlFor="zip" className="block text-sm font-medium mb-3">
+          <label htmlFor="zip" className="block text-sm font-medium mb-2">
             ZIP Code *
           </label>
           <input
@@ -173,7 +166,7 @@ export function CheckoutForm() {
             id="zip"
             name="zip"
             required
-            className={`input-field ${
+            className={`input ${
               errors.zip ? 'border-red-500 ring-red-500' : ''
             }`}
             placeholder="10001"
@@ -184,15 +177,13 @@ export function CheckoutForm() {
         </div>
       </div>
 
-      <motion.button
+      <button
         type="submit"
         disabled={isSubmitting}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ y: 1 }}
-        className="btn-primary w-full text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="btn-primary w-full text-base py-3 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? 'Processing...' : 'Complete Order'}
-      </motion.button>
-    </motion.form>
+      </button>
+    </form>
   );
 }
