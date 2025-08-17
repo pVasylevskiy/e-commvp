@@ -34,7 +34,7 @@ A modern, responsive e-commerce platform for luxury fragrances built with Next.j
 ## 🎨 Design System
 
 - **Typography**: Inter (body) and Manrope (display) fonts
-- **Color Palette**: 
+- **Color Palette**:
   - Primary: #6E56CF (purple)
   - Secondary: #12B886 (teal)
   - Light theme: #F7F7F8 background, #0B0B0C text
@@ -59,6 +59,7 @@ A modern, responsive e-commerce platform for luxury fragrances built with Next.j
 ## 📊 Data Structure
 
 ### Products
+
 ```typescript
 interface Product {
   id: string;
@@ -73,6 +74,7 @@ interface Product {
 ```
 
 ### Sample Products
+
 - Dior Sauvage
 - Chanel No. 5
 - YSL Black Opium
@@ -85,16 +87,19 @@ interface Product {
 ## 🔧 Technical Implementation
 
 ### State Management
+
 - **Cart Store**: Add, remove, increment, decrement, clear, totals
 - **Theme Store**: Light/dark mode toggle with persistence
 - **Local Storage**: Automatic persistence for cart and theme preferences
 
 ### Form Validation
+
 - **Zod Schemas**: Type-safe validation for checkout forms
 - **Error Handling**: Field-level error display and validation
 - **Form Submission**: Console logging of order data, cart clearing, redirect
 
 ### Animations & Interactions
+
 - **Hover Effects**: Scale (1.02) and shadow changes on ProductCard
 - **Image Parallax**: Subtle 2-3px movement on hover
 - **Button Feedback**: Press animations (y: 1-2px)
@@ -102,6 +107,7 @@ interface Product {
 - **Page Transitions**: Smooth loading states and route changes
 
 ### Responsive Design
+
 - **Breakpoints**: xs (320px), sm (640px), md (768px), lg (1024px), xl (1280px), 2xl (1440px)
 - **Grid Systems**: Adaptive layouts for different screen sizes
 - **Typography**: Responsive font sizes and spacing
@@ -109,14 +115,16 @@ interface Product {
 ## 🚀 Getting Started
 
 1. **Install Dependencies**
+
    ```bash
    npm install
    ```
 
 2. **Run Development Server**
-   ```bash
-   npm run dev
-   ```
+
+```bash
+npm run dev
+```
 
 3. **Open Browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
@@ -178,6 +186,7 @@ MIT License - feel free to use this scaffold for your own e-commerce projects!
 ## 🤝 Contributing
 
 This is a scaffold project, but contributions are welcome! Feel free to:
+
 - Report bugs or issues
 - Suggest new features
 - Submit pull requests

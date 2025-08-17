@@ -1,7 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ShoppingBagIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import {
+  ShoppingBagIcon,
+  MagnifyingGlassIcon,
+} from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 interface EmptyStateProps {
@@ -12,7 +15,13 @@ interface EmptyStateProps {
   actionHref: string;
 }
 
-export function EmptyState({ type, title, description, actionText, actionHref }: EmptyStateProps) {
+export function EmptyState({
+  type,
+  title,
+  description,
+  actionText,
+  actionHref,
+}: EmptyStateProps) {
   const Icon = type === 'cart' ? ShoppingBagIcon : MagnifyingGlassIcon;
 
   return (
@@ -27,13 +36,14 @@ export function EmptyState({ type, title, description, actionText, actionHref }:
           <Icon className="w-12 h-12 text-accent" />
         </div>
 
-        <h3 className="text-3xl font-display font-bold text-foreground mb-4">{title}</h3>
-        <p className="text-muted-foreground mb-8 leading-relaxed">{description}</p>
+        <h3 className="text-3xl font-display font-bold text-foreground mb-4">
+          {title}
+        </h3>
+        <p className="text-muted-foreground mb-8 leading-relaxed">
+          {description}
+        </p>
 
-        <Link
-          href={actionHref}
-          className="btn-primary inline-block"
-        >
+        <Link href={actionHref} className="btn-primary inline-block">
           {actionText}
         </Link>
       </div>

@@ -16,8 +16,10 @@ export const products: Product[] = [
     brand: 'Dior',
     slug: 'dior-sauvage',
     price: 89.99,
-    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&h=800&fit=crop&crop=center',
-    description: 'A powerful and fresh fragrance with notes of bergamot, pepper, and ambroxan.',
+    image:
+      'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&h=800&fit=crop&crop=center',
+    description:
+      'A powerful and fresh fragrance with notes of bergamot, pepper, and ambroxan.',
     tags: ['luxury', 'new'],
   },
   {
@@ -26,8 +28,10 @@ export const products: Product[] = [
     brand: 'Chanel',
     slug: 'chanel-no-5',
     price: 129.99,
-    image: 'https://images.unsplash.com/photo-1587017539504-67cfbddac856?w=800&h=800&fit=crop&crop=center',
-    description: 'The iconic fragrance with notes of rose, jasmine, and vanilla.',
+    image:
+      'https://images.unsplash.com/photo-1587017539504-67cfbddac856?w=800&h=800&fit=crop&crop=center',
+    description:
+      'The iconic fragrance with notes of rose, jasmine, and vanilla.',
     tags: ['luxury'],
   },
   {
@@ -36,8 +40,10 @@ export const products: Product[] = [
     brand: 'YSL',
     slug: 'ysl-black-opium',
     price: 79.99,
-    image: 'https://images.unsplash.com/photo-1592945403244-b3faa12b3c54?w=800&h=800&fit=crop&crop=center',
-    description: 'An addictive gourmand fragrance with coffee, vanilla, and white flowers.',
+    image:
+      'https://images.unsplash.com/photo-1592945403244-b3faa12b3c54?w=800&h=800&fit=crop&crop=center',
+    description:
+      'An addictive gourmand fragrance with coffee, vanilla, and white flowers.',
     tags: ['luxury'],
   },
   {
@@ -46,7 +52,8 @@ export const products: Product[] = [
     brand: 'Gucci',
     slug: 'gucci-bloom',
     price: 69.99,
-    image: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&h=800&fit=crop&crop=center',
+    image:
+      'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&h=800&fit=crop&crop=center',
     description: 'A white floral fragrance with tuberose and jasmine.',
     tags: ['new'],
   },
@@ -56,7 +63,8 @@ export const products: Product[] = [
     brand: 'Tom Ford',
     slug: 'tom-ford-noir',
     price: 149.99,
-    image: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&h=800&fit=crop&crop=center',
+    image:
+      'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&h=800&fit=crop&crop=center',
     description: 'A sophisticated oriental fragrance with spices and amber.',
     tags: ['luxury'],
   },
@@ -66,8 +74,10 @@ export const products: Product[] = [
     brand: 'Versace',
     slug: 'versace-eros',
     price: 59.99,
-    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&h=800&fit=crop&crop=center',
-    description: 'A fresh and sensual fragrance with mint, green apple, and vanilla.',
+    image:
+      'https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&h=800&fit=crop&crop=center',
+    description:
+      'A fresh and sensual fragrance with mint, green apple, and vanilla.',
     tags: ['new'],
   },
   {
@@ -76,7 +86,8 @@ export const products: Product[] = [
     brand: 'Jo Malone',
     slug: 'jo-malone-wood-sage-sea-salt',
     price: 89.99,
-    image: 'https://images.unsplash.com/photo-1592945403244-b3faa12b3c54?w=800&h=800&fit=crop&crop=center',
+    image:
+      'https://images.unsplash.com/photo-1592945403244-b3faa12b3c54?w=800&h=800&fit=crop&crop=center',
     description: 'A fresh and mineral fragrance inspired by the British coast.',
     tags: ['luxury'],
   },
@@ -86,8 +97,10 @@ export const products: Product[] = [
     brand: 'Maison Margiela',
     slug: 'maison-margiela-jazz-club',
     price: 99.99,
-    image: 'https://images.unsplash.com/photo-1587017539504-67cfbddac856?w=800&h=800&fit=crop&crop=center',
-    description: 'A warm and intoxicating fragrance with rum, tobacco, and vanilla.',
+    image:
+      'https://images.unsplash.com/photo-1587017539504-67cfbddac856?w=800&h=800&fit=crop&crop=center',
+    description:
+      'A warm and intoxicating fragrance with rum, tobacco, and vanilla.',
     tags: ['luxury', 'new'],
   },
 ];

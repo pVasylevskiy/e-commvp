@@ -4,109 +4,214 @@
 
 @layer base {
   :root {
-    --background: 247 247 248;
-    --foreground: 11 11 12;
-    --accent: 110 86 207;
-    --accent-foreground: 255 255 255;
-    --secondary: 18 184 134;
-    --secondary-foreground: 255 255 255;
-    --muted: 245 245 246;
-    --muted-foreground: 113 113 122;
-    --border: 228 228 231;
-    --input: 228 228 231;
-    --ring: 110 86 207;
-    --card: 255 255 255;
-    --card-foreground: 11 11 12;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 9%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+    --secondary: 162 84% 39%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 262 83% 58%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
   }
 
   .dark {
-    --background: 11 11 12;
-    --foreground: 247 247 248;
-    --accent: 110 86 207;
-    --accent-foreground: 255 255 255;
-    --secondary: 18 184 134;
-    --secondary-foreground: 255 255 255;
-    --muted: 39 39 42;
-    --muted-foreground: 161 161 170;
-    --border: 63 63 70;
-    --input: 63 63 70;
-    --ring: 110 86 207;
-    --card: 39 39 42;
-    --card-foreground: 247 247 248;
+    --background: 0 0% 9%;
+    --foreground: 0 0% 98%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+    --secondary: 162 84% 39%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 262 83% 58%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 98%;
   }
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-card/70 backdrop-blur-md border border-border/50 shadow-lg;
+    background-color: hsl(var(--card) / 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
-  
+
   .glass-card-dark {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
-  
+
   .btn-primary {
-    @apply bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold 
-           hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 
-           transition-all duration-200 active:translate-y-1;
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.2s;
   }
-  
+
+  .btn-primary:hover {
+    background-color: hsl(var(--accent) / 0.9);
+  }
+
+  .btn-primary:focus {
+    outline: none;
+    box-shadow:
+      0 0 0 2px hsl(var(--accent)),
+      0 0 0 4px hsl(var(--accent) / 0.2);
+  }
+
+  .btn-primary:active {
+    transform: translateY(1px);
+  }
+
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-full font-semibold 
-           hover:bg-secondary/90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 
-           transition-all duration-200 active:translate-y-1;
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.2s;
   }
-  
+
+  .btn-secondary:hover {
+    background-color: hsl(var(--secondary) / 0.9);
+  }
+
+  .btn-secondary:focus {
+    outline: none;
+    box-shadow:
+      0 0 0 2px hsl(var(--secondary)),
+      0 0 0 4px hsl(var(--secondary) / 0.2);
+  }
+
+  .btn-secondary:active {
+    transform: translateY(1px);
+  }
+
   .btn-outline {
-    @apply border-2 border-accent text-accent px-6 py-3 rounded-full font-semibold 
-           hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 
-           transition-all duration-200 active:translate-y-1;
+    border: 2px solid hsl(var(--accent));
+    color: hsl(var(--accent));
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.2s;
   }
-  
+
+  .btn-outline:hover {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+
+  .btn-outline:focus {
+    outline: none;
+    box-shadow:
+      0 0 0 2px hsl(var(--accent)),
+      0 0 0 4px hsl(var(--accent) / 0.2);
+  }
+
+  .btn-outline:active {
+    transform: translateY(1px);
+  }
+
   .input-field {
-    @apply w-full px-4 py-3 rounded-lg border border-border bg-card/50 backdrop-blur-sm
-           focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent
-           transition-all duration-200;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid hsl(var(--border));
+    background-color: hsl(var(--card) / 0.5);
+    backdrop-filter: blur(4px);
+    transition: all 0.2s;
   }
-  
+
+  .input-field:focus {
+    outline: none;
+    box-shadow:
+      0 0 0 2px hsl(var(--accent)),
+      0 0 0 4px hsl(var(--accent) / 0.2);
+    border-color: transparent;
+  }
+
   .section-padding {
-    @apply py-20 px-4 xs:px-6 lg:px-8;
+    padding: 5rem 1rem;
   }
-  
+
+  @media (min-width: 320px) {
+    .section-padding {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
   .container-width {
-    @apply max-w-7xl mx-auto;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent;
+    background: linear-gradient(
+      to right,
+      hsl(var(--accent)),
+      hsl(var(--secondary))
+    );
+    background-clip: text;
+    color: transparent;
   }
-  
+
   .blob-accent {
-    @apply absolute w-96 h-96 rounded-full opacity-20 blur-3xl;
+    position: absolute;
+    width: 24rem;
+    height: 24rem;
+    border-radius: 50%;
+    opacity: 0.2;
+    filter: blur(24px);
   }
-  
+
   .blob-accent.iris {
-    @apply bg-accent;
+    background-color: hsl(var(--accent));
   }
-  
+
   .blob-accent.mint {
-    @apply bg-secondary;
+    background-color: hsl(var(--secondary));
   }
-  
+
   .scroll-reveal {
-    @apply opacity-0 translate-y-10;
+    opacity: 0;
+    transform: translateY(2.5rem);
   }
-  
+
   .scroll-reveal.visible {
-    @apply opacity-100 translate-y-0;
+    opacity: 1;
+    transform: translateY(0);
   }
 }

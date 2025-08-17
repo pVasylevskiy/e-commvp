@@ -14,14 +14,14 @@ export default function NotFound() {
         >
           {/* Background Blob */}
           <div className="blob-accent iris -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-10" />
-          
+
           {/* 404 Card */}
           <div className="glass-card rounded-2xl p-12 relative z-10">
             {/* 404 Number */}
             <motion.h1
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
               className="text-8xl font-display font-bold text-gradient mb-8"
             >
               404
@@ -43,8 +43,9 @@ export default function NotFound() {
               transition={{ delay: 0.4 }}
               className="text-xl text-muted-foreground mb-8"
             >
-              The page you're looking for doesn't exist or has been moved.
-              Let's get you back to exploring our fragrance collection.
+              The page you&apos;re looking for doesn&apos;t exist or has been
+              moved. Let&apos;s get you back to exploring our fragrance
+              collection.
             </motion.p>
 
             {/* Action Buttons */}
@@ -54,16 +55,10 @@ export default function NotFound() {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Link
-                href="/"
-                className="btn-primary text-lg px-8 py-4"
-              >
+              <Link href="/" className="btn-primary text-lg px-8 py-4">
                 Go Home
               </Link>
-              <Link
-                href="/products"
-                className="btn-outline text-lg px-8 py-4"
-              >
+              <Link href="/products" className="btn-outline text-lg px-8 py-4">
                 Browse Products
               </Link>
             </motion.div>

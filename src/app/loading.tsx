@@ -12,7 +12,7 @@ export default function Loading() {
       >
         <motion.div
           animate={{ rotate: 360 }}
-          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
           className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4"
         />
         <p className="text-muted-foreground">Loading...</p>

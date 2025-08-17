@@ -32,34 +32,36 @@ export function ProductCard({ product }: ProductCardProps) {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </motion.div>
-          
+
           {/* Price Badge */}
           <div className="absolute top-4 right-4">
             <PriceBadge price={product.price} />
           </div>
-          
+
           {/* Hover Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
       </Link>
-      
+
       <div className="p-6">
         <div className="mb-3">
-          <p className="text-sm font-medium text-muted-foreground mb-1">{product.brand}</p>
+          <p className="text-sm font-medium text-muted-foreground mb-1">
+            {product.brand}
+          </p>
           <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
             {product.name}
           </h3>
         </div>
-        
+
         <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
           {product.description}
         </p>
-        
+
         {/* Add to Cart Button - Full Width */}
         <div className="w-full">
           <AddToCartButton product={product} />
         </div>
-        
+
         {/* View Details Link - Hidden by default, shown on hover */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}

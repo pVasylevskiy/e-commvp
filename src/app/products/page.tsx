@@ -42,10 +42,12 @@ export default function ProductsPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-20"
         >
-          <h1 className="text-6xl font-display font-bold mb-6">Our Collection</h1>
+          <h1 className="text-6xl font-display font-bold mb-6">
+            Our Collection
+          </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore our curated selection of luxury fragrances, each crafted to tell a unique story
-            and become your personal signature scent.
+            Explore our curated selection of luxury fragrances, each crafted to
+            tell a unique story and become your personal signature scent.
           </p>
         </motion.div>
 
@@ -57,7 +59,7 @@ export default function ProductsPage() {
           className="flex justify-center mb-16"
         >
           <div className="glass-card rounded-2xl p-2">
-            {tags.map((tag) => (
+            {tags.map(tag => (
               <button
                 key={tag}
                 onClick={() => setSelectedTag(tag)}
@@ -84,7 +86,7 @@ export default function ProductsPage() {
               variants={containerVariants}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
             >
-              {filteredProducts.map((product) => (
+              {filteredProducts.map(product => (
                 <motion.div key={product.id} variants={itemVariants}>
                   <ProductCard product={product} />
                 </motion.div>

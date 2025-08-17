@@ -11,16 +11,16 @@ interface ThemeStore {
 
 export const useThemeStore = create<ThemeStore>()(
   persist(
-    (set) => ({
+    set => ({
       theme: 'light',
-      
+
       toggleTheme: () => {
-        set((state) => ({
+        set(state => ({
           theme: state.theme === 'light' ? 'dark' : 'light',
         }));
       },
-      
-      setTheme: (theme) => {
+
+      setTheme: theme => {
         set({ theme });
       },
     }),

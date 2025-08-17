@@ -47,7 +47,9 @@ export default function CheckoutPage() {
             transition={{ delay: 0.2 }}
           >
             <div className="glass-card rounded-2xl p-8">
-              <h2 className="text-2xl font-display font-semibold mb-8">Shipping Information</h2>
+              <h2 className="text-2xl font-display font-semibold mb-8">
+                Shipping Information
+              </h2>
               <CheckoutForm />
             </div>
           </motion.div>

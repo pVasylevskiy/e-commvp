@@ -34,7 +34,7 @@ export function Header() {
       animate={{ y: 0 }}
       className={`sticky top-0 z-50 w-full transition-all duration-500 ${
         isScrolled
-          ? 'bg-background/80 backdrop-blur-xl shadow-glass border-b border-border/20'
+          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-xl shadow-glass border-b border-border/20'
           : 'bg-transparent'
       }`}
     >
@@ -48,7 +48,7 @@ export function Header() {
               Moonlight
             </motion.h1>
           </Link>
-          
+
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
@@ -64,13 +64,13 @@ export function Header() {
                     layoutId="activeTab"
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent rounded-full"
                     initial={false}
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                    transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                   />
                 )}
               </Link>
             ))}
           </nav>
-          
+
           <div className="flex items-center gap-4">
             <Link href="/cart" className="relative">
               <CartIcon />

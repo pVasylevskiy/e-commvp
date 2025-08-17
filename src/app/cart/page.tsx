@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCartStore } from '@/store/cart';
@@ -9,7 +9,13 @@ import { EmptyState } from '@/components/EmptyState';
 import { TrashIcon, PlusIcon, MinusIcon } from '@heroicons/react/24/outline';
 
 export default function CartPage() {
-  const { items, incrementQuantity, decrementQuantity, removeItem, getTotalItems } = useCartStore();
+  const {
+    items,
+    incrementQuantity,
+    decrementQuantity,
+    removeItem,
+    getTotalItems,
+  } = useCartStore();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -56,9 +62,12 @@ export default function CartPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-16"
         >
-          <h1 className="text-5xl font-display font-bold mb-4">Shopping Cart</h1>
+          <h1 className="text-5xl font-display font-bold mb-4">
+            Shopping Cart
+          </h1>
           <p className="text-muted-foreground text-lg">
-            You have {getTotalItems()} item{getTotalItems() !== 1 ? 's' : ''} in your cart
+            You have {getTotalItems()} item{getTotalItems() !== 1 ? 's' : ''} in
+            your cart
           </p>
         </motion.div>
 
@@ -92,7 +101,9 @@ export default function CartPage() {
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <h3 className="font-display text-xl font-semibold text-foreground mb-1">{item.name}</h3>
+                          <h3 className="font-display text-xl font-semibold text-foreground mb-1">
+                            {item.name}
+                          </h3>
                           <p className="text-muted-foreground">{item.brand}</p>
                         </div>
                         <p className="text-2xl font-bold text-accent">
@@ -113,7 +124,9 @@ export default function CartPage() {
                             <MinusIcon className="w-4 h-4" />
                           </motion.button>
 
-                          <span className="w-16 text-center font-semibold text-lg">{item.quantity}</span>
+                          <span className="w-16 text-center font-semibold text-lg">
+                            {item.quantity}
+                          </span>
 
                           <motion.button
                             whileHover={{ scale: 1.05 }}
@@ -149,10 +162,7 @@ export default function CartPage() {
               transition={{ delay: 0.3 }}
               className="mt-8 text-center"
             >
-              <Link
-                href="/products"
-                className="btn-outline"
-              >
+              <Link href="/products" className="btn-outline">
                 ← Continue Shopping
               </Link>
             </motion.div>

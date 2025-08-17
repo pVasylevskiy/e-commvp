@@ -24,7 +24,7 @@ export default function Home() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as const,
+        ease: 'easeOut' as const,
       },
     },
   };
@@ -41,7 +41,7 @@ export default function Home() {
         {/* Background Blobs */}
         <div className="blob-accent iris top-1/4 left-1/4" />
         <div className="blob-accent mint bottom-1/4 right-1/4" />
-        
+
         <div className="container-width text-center relative z-10">
           <motion.h1
             variants={itemVariants}
@@ -50,14 +50,14 @@ export default function Home() {
             <span className="block">Minimal scents,</span>
             <span className="block text-gradient">maximum style.</span>
           </motion.h1>
-          
+
           <motion.p
             variants={itemVariants}
             className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
           >
             Luxury perfumes reimagined for the everyday.
           </motion.p>
-          
+
           <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -92,16 +92,18 @@ export default function Home() {
       >
         <div className="container-width">
           <motion.div variants={itemVariants} className="text-center mb-20">
-            <h2 className="text-5xl font-display font-bold mb-6">Featured Fragrances</h2>
+            <h2 className="text-5xl font-display font-bold mb-6">
+              Featured Fragrances
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Discover our most popular and newest additions to the collection
             </p>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProducts.map((product, index) => (
-              <motion.div 
-                key={product.id} 
+              <motion.div
+                key={product.id}
                 variants={itemVariants}
                 transition={{ delay: index * 0.1 }}
               >
@@ -109,11 +111,8 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          
-          <motion.div
-            variants={itemVariants}
-            className="text-center mt-16"
-          >
+
+          <motion.div variants={itemVariants} className="text-center mt-16">
             <motion.a
               href="/products"
               whileHover={{ scale: 1.05 }}
@@ -142,16 +141,18 @@ export default function Home() {
               </h2>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Each fragrance in our collection is carefully selected to represent the finest 
-                  in perfumery, combining traditional craftsmanship with modern innovation.
+                  Each fragrance in our collection is carefully selected to
+                  represent the finest in perfumery, combining traditional
+                  craftsmanship with modern innovation.
                 </p>
                 <p>
-                  From the first spritz to the lingering dry-down, experience the artistry 
-                  and sophistication that makes each scent truly exceptional.
+                  From the first spritz to the lingering dry-down, experience
+                  the artistry and sophistication that makes each scent truly
+                  exceptional.
                 </p>
               </div>
             </motion.div>
-            
+
             <motion.div
               variants={itemVariants}
               className="relative aspect-square rounded-2xl overflow-hidden glass-card"

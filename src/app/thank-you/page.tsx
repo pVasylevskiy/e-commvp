@@ -16,14 +16,14 @@ export default function ThankYouPage() {
         >
           {/* Background Blob */}
           <div className="blob-accent iris -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-          
+
           {/* Success Card */}
           <div className="glass-card rounded-2xl p-12 relative z-10">
             {/* Success Icon */}
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+              transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
               className="mx-auto w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center mb-8"
             >
               <CheckCircleIcon className="w-12 h-12 text-accent" />
@@ -45,7 +45,8 @@ export default function ThankYouPage() {
               transition={{ delay: 0.5 }}
               className="text-xl text-muted-foreground mb-8"
             >
-              We'll be in touch soon with your order details and tracking information.
+              We&apos;ll be in touch soon with your order details and tracking
+              information.
             </motion.p>
 
             {/* Order Details */}
@@ -55,9 +56,9 @@ export default function ThankYouPage() {
               transition={{ delay: 0.6 }}
               className="bg-muted/30 rounded-2xl p-6 mb-8"
             >
-              <h2 className="text-lg font-semibold mb-4">What's Next?</h2>
+              <h2 className="text-lg font-semibold mb-4">What&apos;s Next?</h2>
               <div className="space-y-3 text-sm text-muted-foreground">
-                <p>• You'll receive an order confirmation email shortly</p>
+                <p>• You&apos;ll receive an order confirmation email shortly</p>
                 <p>• Your order will be processed within 1-2 business days</p>
                 <p>• Shipping confirmation with tracking number will be sent</p>
                 <p>• Expected delivery: 3-5 business days</p>
@@ -71,16 +72,10 @@ export default function ThankYouPage() {
               transition={{ delay: 0.7 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Link
-                href="/products"
-                className="btn-primary text-lg px-8 py-4"
-              >
+              <Link href="/products" className="btn-primary text-lg px-8 py-4">
                 Continue Shopping
               </Link>
-              <Link
-                href="/"
-                className="btn-outline text-lg px-8 py-4"
-              >
+              <Link href="/" className="btn-outline text-lg px-8 py-4">
                 Back to Home
               </Link>
             </motion.div>

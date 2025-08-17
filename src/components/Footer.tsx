@@ -17,7 +17,7 @@ export function Footer() {
                 Luxury fragrances reimagined for the everyday
               </p>
             </div>
-            
+
             <div className="flex items-center gap-6">
               <motion.a
                 href="https://github.com"
@@ -31,7 +31,7 @@ export function Footer() {
                 <GithubIcon className="w-5 h-5" />
                 <span className="hidden sm:inline">GitHub</span>
               </motion.a>
-              
+
               <motion.a
                 href="mailto:hello@moonlight.com"
                 whileHover={{ scale: 1.1 }}
@@ -46,7 +46,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      
+
       <div className="text-center pb-8">
         <p className="text-sm text-muted-foreground">
           © 2024 Moonlight Perfume. All rights reserved.

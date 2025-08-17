@@ -10,34 +10,34 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        'xs': '320px',
-        'sm': '640px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1280px',
+        xs: '320px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
         '2xl': '1440px',
       },
       colors: {
-        background: 'rgb(var(--background))',
-        foreground: 'rgb(var(--foreground))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         accent: {
-          DEFAULT: 'rgb(var(--accent))',
-          foreground: 'rgb(var(--accent-foreground))',
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
         },
         secondary: {
-          DEFAULT: 'rgb(var(--secondary))',
-          foreground: 'rgb(var(--secondary-foreground))',
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
         muted: {
-          DEFAULT: 'rgb(var(--muted))',
-          foreground: 'rgb(var(--muted-foreground))',
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
         },
-        border: 'rgb(var(--border))',
-        input: 'rgb(var(--input))',
-        ring: 'rgb(var(--ring))',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
         card: {
-          DEFAULT: 'rgb(var(--card))',
-          foreground: 'rgb(var(--card-foreground))',
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
       },
       fontFamily: {
@@ -48,12 +48,12 @@ const config: Config = {
         '2xl': '1rem',
       },
       boxShadow: {
-        'glass': '0 8px 32px rgba(0, 0, 0, 0.1)',
+        glass: '0 8px 32px rgba(0, 0, 0, 0.1)',
         'glass-dark': '0 8px 32px rgba(0, 0, 0, 0.3)',
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease-out forwards',
-        'stagger': 'stagger 0.6s ease-out forwards',
+        stagger: 'stagger 0.6s ease-out forwards',
       },
       keyframes: {
         fadeUp: {
