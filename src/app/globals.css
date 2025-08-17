@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 247 247 248;
+    --foreground: 11 11 12;
+    --accent: 110 86 207;
+    --accent-foreground: 255 255 255;
+    --secondary: 18 184 134;
+    --secondary-foreground: 255 255 255;
+    --muted: 245 245 246;
+    --muted-foreground: 113 113 122;
+    --border: 228 228 231;
+    --input: 228 228 231;
+    --ring: 110 86 207;
+    --card: 255 255 255;
+    --card-foreground: 11 11 12;
+  }
+
+  .dark {
+    --background: 11 11 12;
+    --foreground: 247 247 248;
+    --accent: 110 86 207;
+    --accent-foreground: 255 255 255;
+    --secondary: 18 184 134;
+    --secondary-foreground: 255 255 255;
+    --muted: 39 39 42;
+    --muted-foreground: 161 161 170;
+    --border: 63 63 70;
+    --input: 63 63 70;
+    --ring: 110 86 207;
+    --card: 39 39 42;
+    --card-foreground: 247 247 248;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/70 backdrop-blur-md border border-border/50 shadow-lg;
+  }
+  
+  .glass-card-dark {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  
+  .btn-primary {
+    @apply bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold 
+           hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 
+           transition-all duration-200 active:translate-y-1;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-full font-semibold 
+           hover:bg-secondary/90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 
+           transition-all duration-200 active:translate-y-1;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-accent text-accent px-6 py-3 rounded-full font-semibold 
+           hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 
+           transition-all duration-200 active:translate-y-1;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-border bg-card/50 backdrop-blur-sm
+           focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent
+           transition-all duration-200;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 xs:px-6 lg:px-8;
+  }
+  
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent;
+  }
+  
+  .blob-accent {
+    @apply absolute w-96 h-96 rounded-full opacity-20 blur-3xl;
+  }
+  
+  .blob-accent.iris {
+    @apply bg-accent;
+  }
+  
+  .blob-accent.mint {
+    @apply bg-secondary;
+  }
+  
+  .scroll-reveal {
+    @apply opacity-0 translate-y-10;
+  }
+  
+  .scroll-reveal.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
